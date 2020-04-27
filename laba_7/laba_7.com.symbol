@@ -1,0 +1,33 @@
+< THE SYMBOL TABLE >  laba_7.com  --  emu8086 assembler version: 4.05 
+===================================================================================================
+Name                     	Offset    	Size      	Type      	Segment   
+===================================================================================================
+CODE                     	00100     	-1        	LABEL     	(NOSEG)   
+CMD_LENGTH               	00080     	1         	VAR       	(NOSEG)   
+CMD_LINE                 	00081     	1         	VAR       	(NOSEG)   
+START                    	00100     	-1        	LABEL     	(NOSEG)   
+FIND_PARAM               	00115     	-1        	LABEL     	(NOSEG)   
+SCAN_PARAMS              	00121     	-1        	LABEL     	(NOSEG)   
+PARAMS_ENDED             	00133     	-1        	LABEL     	(NOSEG)   
+NEXT_PARAM               	00137     	-1        	LABEL     	(NOSEG)   
+SCAN_PARAM               	00145     	-1        	LABEL     	(NOSEG)   
+PARAM_ENDED              	00152     	-1        	LABEL     	(NOSEG)   
+STRING_TO_NUM            	00158     	-1        	LABEL     	(NOSEG)   
+LOOP_                    	0015A     	-1        	LABEL     	(NOSEG)   
+EX                       	0017B     	-1        	LABEL     	(NOSEG)   
+CYCLE                    	00199     	-1        	LABEL     	(NOSEG)   
+NEXT                     	001AD     	-1        	LABEL     	(NOSEG)   
+EXIT                     	001AF     	-1        	LABEL     	(NOSEG)   
+ERROR                    	001B1     	1         	VAR       	(NOSEG)   
+EPB                      	001B9     	2         	VAR       	(NOSEG)   
+COMMANDLINE              	001C7     	1         	VAR       	(NOSEG)   
+COMMAND_TEXT             	001CB     	1         	VAR       	(NOSEG)   
+PROGRAMM                 	00245     	1         	VAR       	(NOSEG)   
+NUMBER                   	00295     	1         	VAR       	(NOSEG)   
+NUM                      	002E5     	2         	VAR       	(NOSEG)   
+ARGC                     	002E7     	2         	VAR       	(NOSEG)   
+_LOCATION_COUNTER__N1_L7F	002E9     	-1        	LABEL     	(NOSEG)   
+===================================================================================================
+[ 4/26/2020  --  9:42:36 PM ] 
+< END >
+ 

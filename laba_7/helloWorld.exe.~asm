@@ -1,0 +1,29 @@
+.model small
+.stack 100h
+.code
+start:
+
+mov ax, @data
+mov ds,ax
+
+mov ah,9
+
+mov dx,offset string
+
+int 21h
+
+mov dx,offset stringi
+
+int 21h
+
+mov ax,4C00h
+int 21h
+
+.data
+
+string db "Name: Vlad" , 0Dh, 0Ah, '$'
+stringi db "Group: 850504" , 0Dh, 0Ah, '$'
+
+end start
+
+
