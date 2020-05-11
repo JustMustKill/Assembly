@@ -17,8 +17,13 @@ sourcePath            db  maxCMDSize + 2 dup(0)
 ;sourcePath            db  "text.txt", 0
 
 sourceID              dw  0
-                      
-maxWordSize           equ 50
+lenghtLine			  dw  0
+freeLines			  dw  20
+pageUp				  dw  0
+pageDown			  dw  0
+up					  dw  0
+down				  dw  0                      
+maxWordSize           equ 1600
 buffer                db  maxWordSize + 2 dup(0)
 line   				  db  maxWordSize + 2 dup(0)                           
 spaceSym              db  " ","$"                            
@@ -420,7 +425,7 @@ mainProc PROC
 readFromFileInBuffer:
 
 	mov bx, sourceID                    
-	setPosInFileTo stepReadedTotal, readedTotal                  
+	setPosInFileTo stepReadedTotal, readedTotal	
 gg: 
     call readFromFile                   
 	                                    
@@ -429,12 +434,10 @@ gg:
 	
 	mov reader, ax
 	
-	
-	add readedTotal, ax
-	adc stepReadedTotal, 0
-	
 	lea si, buffer                      
-	lea di, buffer
+	
+	call printBuffer
+	jmp finishProcessing_
 	
 checkDeleteLine:	
 	mov cx, deleteLine
@@ -445,7 +448,7 @@ skipLineProc:
 	call skipLine
 	
 	cmp dx, 0
-	je printBuffer
+	je printBuffer_
 	
 	add numberOfLine, dx
 	jmp checkDeleteLine
@@ -456,7 +459,7 @@ activationClearMode:
 	mov numberOfLine, 0					; Сброс счетчика строк
 	jmp skipLineProc
 
-printBuffer:
+printBuffer_:
 	
 
 	
@@ -496,6 +499,8 @@ finishProcessing:
     mov bx, sourceID                    
     mov cx, 0h                          
     int 21h                             
+finishProcessing_:
+
                                         
 	pop di                              
 	pop si                              
@@ -505,6 +510,16 @@ finishProcessing:
 	pop bx                              
 	ret   
 
+ENDP 
+;*************************************************************************************************************************
+
+;**************************************************************************************************************************
+printBuffer PROC
+
+		
+	print buffer	
+
+	ret   
 ENDP 
 ;*************************************************************************************************************************
 
